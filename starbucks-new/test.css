@@ -1,0 +1,350 @@
+span {
+    font-size: 50px;
+    color: blue;
+    text-decoration: underline;
+}
+
+ul > .orange{
+   color: blue; 
+}
+
+/* ~ 다음 형제들 */
+.parent .orange ~ a{
+    color: blue;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: orange;
+    transition: 1s;
+}
+/* 가상 킄래스 선택자 : 마우스 올렸을 때 */
+.box:hover {
+    width: 300px;
+    background-color: royalblue;
+}
+
+/* 가상 클래스 선택자 : 마우스 클릭하고 있는 동안 */
+.box:active {
+    height: 500px;
+    background-color: salmon;
+}
+
+.input {
+    width: 100px;
+    height: 100px;
+    background-color: orchid;
+}
+
+/* 가상 클래스 선택자 : 요소가 포커스가 됐을 때
+focus가 되지 않는 요소는 tabindex -1 하면 사용 가능 */
+.input:focus {
+    background-color: red;
+}
+
+/* 가상 클래스 선택자 : 첫번째 자식 요소
+중간에 다른 요소가 있을 경우 인식 안됨 */
+.fruit div:first-child{
+    color: red;
+}
+
+/* 가상 클래스 선택자 : 마지막 자식 요소 */
+.fruit div:last-child{
+    color: red;
+}
+
+/* 가상 클래스 선택자 : n번째 자식
+2n으로 할 경우 짝수번째의 요소
+2n+1로 할 경우 홀수번째의 요소
+n+2 2번째 요소부터 시작
+-n+3 2번째 이하 요소들만 선택 */
+.fruit *:nth-child(2n){
+    color: orchid;
+}
+
+/* 가상 클래스 선택자 : 아닌 요소 선택 */
+.fruit *:not(div){
+    color: peru;
+}
+
+/* 가상 요소 선택자 
+해당 요소의 내부 앞에 내용을 삽입 */
+.box::before{
+    content: "앞!";
+}
+
+/* 가상 요소 선택자 
+해당 요소의 내부 앞에 내용을 삽입 */
+.box::after{
+    content: "뒤!";
+}
+
+.box2 {
+    background-color: pink;
+    width: 100px;
+    height: 100px;
+}
+
+/* 가상 요소 선택자 
+해당 요소의 내부 앞에 텍스트가 아니더라도 요소를 넣을수도 있음 */
+.box::after{
+    content: "";
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    display: block;
+}
+
+/* 속성 선택자
+ */
+ [disabled] {
+     background-color: royalblue;
+ }
+
+ /* 속성 선택자
+ */
+ [type="password"] {
+     background-color: saddlebrown;
+ }
+ /* 속성 선택자
+data 속성도 활용가능
+ */
+ [data-test=""] {
+     background-color: salmon;
+ }
+
+ /* 모든 속성들이 상속되지는 않음. 
+ 글자와 관련된 속성은 후손에도 똑같이 적용될 가능성이 높음 */
+
+ .parent {
+     width: 100px;
+     height: 100px;
+     background-color: salmon;
+ }
+
+ /* 외적인 상속들은 inherit을 통해서 부모 것을 강제 상속할 수 있음 */
+ .child {
+     width: 50px;
+     height: inherit;
+     background-color: orchid;
+ }
+
+ /* 선택자의 우선순위 점수 계산 필요
+ important > 인라인 > ID 선택자 > 클래스 선택자 > 태그 선택자 > body 선택자 */
+
+ /* 테두리 선 2px 두께 실선 빨강 */
+ .line {
+     border: 2px solid red;
+ }
+
+ /* overflow 부모 요소에 넘침 제어
+ visible : 넘친거 보여줌
+ hidden : 넘친거 숨김
+ scroll : 세로, 가로 둘다 스크롤 보여줌 (안넘치는쪽도 생김)
+ auto : 넘치는 쪽만 스크롤 생김
+ */
+ .over-parent {
+    width: 100px;
+    height: 100px;
+    background-color: khaki;
+    overflow: auto;
+    padding: 20px;
+ }
+.over-child {
+    background-color: lightblue;
+    width: 200px;
+    height: 50px;
+}
+
+/* display
+    block : 상자(레아이웃) 요소 div
+    inline : 글자요소 span
+    inline-block : 글자 + 상자 요소 
+        (inline 요소가 가지고 있지 않은 가로세로 값 지정 가능)
+    flex : 플렉스 박스 (1차원 레이아웃)
+    grid : 그리드 (2차원 레이아웃)
+    none : 보여짐 특성 없음.
+*/
+
+/* line-height 폰트 사이즈에 대한 한 줄에 대한 높이
+배수를 입력하는 것이 좋음
+line-height를 영역의 높이 만큼 맞추면 세로 가운데 정렬이 가능함
+flex가 나오면서 글꼴에 대한 줄의 높이로 고유하게 씀
+*/
+
+/* font-weight
+400 : normal
+700 : bold */
+
+/* serif 바탕체
+sans-serif 고딕체
+monospace 고정너비 글꼴
+cursive 필기체
+fantasy 장식 글꼴 계열 */
+
+/* 글자의 색상은 color만 해당 */
+
+/* text-indent 들여쓰기, 내어쓰기(음수) */
+
+/* background image */
+body{
+    height: 3000px;
+}
+.imagetest {
+    /* width: 200px; */
+    height: 200px;
+    background-color: orange;
+    background-image: url("https://heropy.blog/css/images/logo.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; /*covor 더 넓은 너비에 맞춰짐, contain 더 짧은 너비에 맞춰짐*/
+    background-attachment: fixed; /*페럴렉스 구현가능, fixed 요소는 고정됨 스크롤하면 거기에 맞춰서 이동됨*/
+}
+
+/* 배치 
+static 기준없음
+relative 요소 자신 기준, 이 기준으로의 배치는 거의 사용되지 않음
+absolute 위치상 부모요소 기준
+fixed 뷰포트(브라우저) 기준
+*/
+.blue-background {
+    width: 300px;
+    background-color: royalblue;
+    position: relative;
+}
+
+.blue-background .inner-item{
+    background-color: orange;
+    border: 4px dashed red;
+}
+
+.blue-background .inner-item:nth-child(1) {
+    width: 100px;
+    height: 100px;
+}
+
+.blue-background .inner-item:nth-child(2) {
+    width: 140px;
+    height: 70px;
+    position: absolute;
+    bottom: 30px;
+    right: 60px;
+}
+
+.blue-background .inner-item:nth-child(3) {
+    width: 70px;
+    height: 140px;
+}
+
+/* 요소 쌓임 순서
+어떤 요소가 사용자와 더 가깝게 있는지 결정
+1. 요소에 position 속성의 값이 있는 경우 위에 쌓임 (static 제외)
+2. 1번 조건이 같을 경우 z-index 속성의 숫자 값이 높을 수록 위에 쌓임
+3. 1번과 2번 조건이 같은 경우, html의 다음 구조일 수록 위에 쌓임*/
+
+/* position이 absolute, fixed가 된 경우 display 속성이 block으로 변경됨 */
+
+
+/* flex 수평 정렬
+flex container : flex-flow, flex-direction, flex-wrap, justify-content,
+align-content, align-items
+flex items : order, flex, flex-grow, flex-shrink, flex-basis, align-self
+ */
+
+ /* flex-direction 주 축을 설정
+ row 행 축
+ row-reverse 행 축 반대로
+ column 열 축
+ column-reverse 열 축 반대로 */
+
+ /* flex-wrap : flex items 묶음(줄바꿈) 여부
+ nowrap 묶음 없음
+ wrap 묶음(칸이 모자르면 줄바꿈 처리 가능) */
+
+ /* justify-content 주 축의 정렬 방법
+ flex-start : flex items를 시작점으로 정렬
+ flex-end : flex items를 끝점으로 정렬
+ center : flex items를 가운데 정렬
+ */
+
+ /* align-content 교차 축의 여러줄 정렬 방법
+ stretch : flex items를 시작점으로 정렬
+ flex-start : flex items를 시작점으로 정렬
+ flex-end : flex items를 끝점으로 정렬
+ center : flex items를 가운데 정렬
+ */
+
+/* align-items 교차 축의 한줄 정렬 방법
+ stretch : flex items를 교차 축으로 늘림
+ flex-start : flex items 각각 줄의 시작점으로 정렬
+ flex-end : flex items 각각 줄의 끝점으로 정렬
+ center : flex items 각각 줄의 가운데 정렬 
+*/
+
+/* order 숫자가 적을수록 앞에 */
+/* flex-grow item의 증가 너비 비율  */
+/* flex-shrink item 감소 너비 비율, 기본값 1 */
+/* flex-basis 공간 배분 전 기본 너비 (안에 텍스트 있으면 너비가 달라짐)  */
+.container {
+    width: 500px;
+    height: 300px;
+    background-color: royalblue;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-grow: 1;
+    flex-basis: 0;
+}
+
+.container .item {
+    width: 100px;
+    height: 100px;
+    border: 3px dashed red;
+    background-color: orange;
+    flex-grow: 2;
+    flex-basis: 0;
+}
+
+/* 전환
+transition : 속성이름, 시간 (쉼표로 연속적으로 설정가능) 
+transition-property : 전환 효과를 사용할 속성 이름을 지정
+all : 기본값
+속성 이름
+transition-duration : 전환 효과의 지속시간
+transition-timing-function : 전환 효과의 타이밍 함수를 지정
+ease : 느리게 - 빠르게 - 느리게
+linear 일정하게
+ease-in : 느리게 - 빠르게
+ease-out 빠르게 - 느리게
+ease-in-out 느리게 빠르게 느리게
+https://easings.net/ko
+https://greensock.com/docs/v2/Easing
+transition-delay : 전환 효과가 몇초 뒤에 시작할지 대기시간을 지정
+transition : 1s .5s; 지속시간, 대기시간
+ */
+
+ /* 변환 transform 띄어쓰기 구분 가능
+ 2차원 변환 함수
+ translate(x,y) : 이동
+ translate(x) : x 이동
+ translate(y) : y 이동
+ rotate : 회전
+ scale : 크기
+ skewX(x) : 기울임 x축
+ skewY(y) : 기울임 y축
+ 
+ 3차원 변환 함수
+rotateX(x) : 회전 x축
+rotateY(y) : 회전 y축
+perspective(n) : 원근법(거리) 
+
+원근법 함수는 제일 앞에 작성해야 함
+transform : perspective(500px) rotateX(45deg);
+
+perspective 속성과 함수 차이점 (부모 요소에 속성을 더 많이 쓴다고 함)
+perspective: 600px; 적용대상은 관찰 대상의 부모, 기준점 설정 perspective-origin
+transform: perspective(600px) 적용대상은 관찰 대상, transform-origin
+ */
+
+ /* backface-visibility : 3d 변환으로 뒷면 숨김 여부 */

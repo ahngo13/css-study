@@ -1,0 +1,41 @@
+.header {
+    position : relative;
+  }
+  
+.header .inner{
+    width : 1024px;
+    margin : 0px auto;
+}
+
+.header .inner a{
+    display : inline-block;
+}
+
+.header .inner a img{
+    height : 75px;
+    top : 0px;
+    bottom : 0px;
+    display : block;
+}
+
+.menu-bar {
+    position : relative;
+    height: 60px;
+}
+
+.menu-bar .inner {
+    width: 1024px;
+    left : 0px;
+    right : 0px;
+    margin : 0 auto;
+    position : absolute;
+}
+
+.menu-bar .inner .menu-list{
+    width: fit-content;
+    margin : 0 auto;
+}
+
+.menu-bar .inner .menu-list li{
+    display: inline;
+}
